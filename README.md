@@ -31,7 +31,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-![Video Walkthrough](/src/assets/gif/pet_finder.gif)
+![Video Walkthrough](/pet_finder.gif)
 
 
 GIF created with Licecap  
