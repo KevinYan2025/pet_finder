@@ -1,9 +1,11 @@
 import '../App.css'
+import { Link, Outlet } from 'react-router-dom';
 const AnimalInfo = ({animals,searchItem}) => {
 console.log(animals);
 
     return(
         <>
+<div className="mainContent"> <h1>Love Animal? Adopt them</h1>
    <div className="animal-grid">
      {animals.length === 9 ? (
         animals.map((animal, index) => (
@@ -17,13 +19,15 @@ console.log(animals);
                         </div>
                             <p>{animal.breeds.primary}</p>
                 </div>
-            <button>Adopt {animal.gender === "Female" ? "her" : "him"}</button>
-
+            <Link to={`/animalDetail/${animal.id}`}>
+              <button>Learn More About {animal.gender === "Female" ? "Her" : "Him"}</button>
+            </Link>
           </div>
         ))
       ) : (
         <div>Loading...</div>
       )}
+    </div>
     </div>
         </>
     )

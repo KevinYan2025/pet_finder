@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './App.css'
-import AnimalInfo from './Component/AnimalGrid';
+import AnimalInfo from './Component/AnimalInfo';
 import SideNavBar from './Component/SideNavBar';
+import { BrowserRouter, Route, Routes ,Outlet} from "react-router-dom";
+import AnimalDetail from './Component/AnimalDetail.jsx';
 
 function App() {
   const apiKey = import.meta.env.VITE_APP_API_KEY;
@@ -11,8 +13,8 @@ function App() {
     headers: { Authorization: `Bearer ${token}` }
   }
   const [currentPage,setCurrentPage] = useState(1);
-  const [loveDog,setLoveDog] = useState(true);
-  const [loveCat,setLoveCat] = useState(true);
+  const [loveDog,setLoveDog] = useState(false);
+  const [loveCat,setLoveCat] = useState(false);
   const [animals,setAnimals]=useState([]);
   const [filteredAnimals,setFilteredAnimals] = useState(animals)
   const [searchItem,setSearchItem] = useState('')
@@ -50,9 +52,8 @@ function App() {
   // console.log(animals);
   return (
     <>
-      <h1>Love Pet? Adopt them!</h1>
       <div className="content">
-      <SideNavBar animals={animals} setFilteredAnimals={setFilteredAnimals} searchItem={searchItem} setSearchItem={setSearchItem} setLoveDog={setLoveDog} setLoveCat={setLoveCat} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
+      <SideNavBar loveCat={loveCat} loveDog={loveDog}  animals={animals} setFilteredAnimals={setFilteredAnimals} searchItem={searchItem} setSearchItem={setSearchItem} setLoveDog={setLoveDog} setLoveCat={setLoveCat} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
       <AnimalInfo filteredAnimals={filteredAnimals} searchItem={searchItem} animals={animals}></AnimalInfo>
       </div>
     </>

@@ -1,21 +1,19 @@
 
-const SideNavBar = ({animals,setFilteredAnimals,searchItem,setSearchItem,setLoveCat,setLoveDog,setCurrentPage,currentPage}) => {
-    const handleDogOnly = (event) => {
-        const isChecked = event.target.checked;
-        if(isChecked){
-            setLoveCat(false)
-        }else{
-            setLoveCat(true)
-        }
-    }
-    const handleCatOnly = (event) => {
-        const isChecked = event.target.checked;
-        if(isChecked){
-            setLoveDog(false)
-        }else{
-            setLoveDog(true)
-        }
-    }
+const SideNavBar = ({animals,setFilteredAnimals,searchItem,setSearchItem,setLoveCat,setLoveDog,setCurrentPage,currentPage,loveCat,loveDog}) => {
+    const handleDogOnly = () => {
+        setLoveDog(true);
+        setLoveCat(false);
+      };
+    
+      const handleCatOnly = () => {
+        setLoveCat(true);
+        setLoveDog(false);
+      };
+    
+      const fetchAllAnimal = () => {
+        setLoveCat(false);
+        setLoveDog(false);
+      };
     const handleNextPage = () => {
         setCurrentPage(currentPage + 1)
     }
@@ -38,7 +36,15 @@ const SideNavBar = ({animals,setFilteredAnimals,searchItem,setSearchItem,setLove
                 <label>
                     <input
                     type="checkbox"
-                    value="false"
+                    checked={!loveCat && !loveDog}
+                    onChange={fetchAllAnimal}
+                    />
+                    All
+                </label>
+                <label>
+                    <input
+                    type="checkbox"
+                    checked={loveDog}
                     onChange={handleDogOnly}
                     />
                     Dog Only
@@ -46,7 +52,7 @@ const SideNavBar = ({animals,setFilteredAnimals,searchItem,setSearchItem,setLove
                 <label>
                     <input
                     type="checkbox"
-                    value="false"
+                    checked={loveCat}
                     onChange={handleCatOnly}
                     />
                     Cat Only
