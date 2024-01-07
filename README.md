@@ -1,29 +1,8 @@
 
-Submitted by: **Zhixiang Yan**
+
 
 This web app: **Using Pet finder api to find animal to adopt**
-
-Time spent: **8** hours spent in total
-
-## Required Features
-
-The following **required** functionality is completed:
-
-- [x] **The app includes at least one unique chart developed using the fetched data that tell an interesting story**
-- [x] **Clicking on an item in the list view displays more details about it**
-- [x] **Clicking on an item has a direct, unique link to that item's detail view page**
-
-
-The following **optional** features are implemented:
-
-- [ ] The site's customized dashboard contains more content that explains what is interesting about the data
-- [ ] The site allows users to toggle between different data visualizations
-
-The following **additional** features are implemented:
-
-* [ ] List anything else that you added to improve the site's functionality!
-
-
+The application utilizes the Petfinder API to facilitate the adoption process by allowing users to search and explore a diverse range of adoptable animals. Users can input their preferences, such as location, animal type, and breed, to discover available pets. The app provides detailed information and images for each animal, fostering a seamless adoption experience while encouraging responsible pet ownership.
 ## Video Walkthrough
 
 Here's a walkthrough of implemented required features:
@@ -31,12 +10,6 @@ Here's a walkthrough of implemented required features:
 ![Video Walkthrough](/pet_finder.gif)
 
 
-GIF created with Licecap  
-## Notes
-
-Describe any challenges encountered while building the app.
-
-## License
 
     Copyright [2023] [Zhixiang Yan]
 
