@@ -8,12 +8,6 @@ import AnimalInfo from './Component/AnimalInfo.jsx';
 import AnimalDetail from './Component/AnimalDetail.jsx';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-<BrowserRouter>
-<Routes>
-        <Route path="/" element={<App />}/>
-       
-          <Route path="animalDetail/:animal" element={<AnimalDetail />} />
-</Routes>
-    </BrowserRouter>
+    <App></App>
   </React.StrictMode>,
 )

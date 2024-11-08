@@ -52,9 +52,16 @@ function App() {
   // console.log(animals);
   return (
     <>
-      <div className="content">
-      <SideNavBar loveCat={loveCat} loveDog={loveDog}  animals={animals} setFilteredAnimals={setFilteredAnimals} searchItem={searchItem} setSearchItem={setSearchItem} setLoveDog={setLoveDog} setLoveCat={setLoveCat} currentPage={currentPage} setCurrentPage={setCurrentPage}/>
-      <AnimalInfo filteredAnimals={filteredAnimals} searchItem={searchItem} animals={animals}></AnimalInfo>
+      <div className="bg-black">
+      <Router>
+        <div className="flex flex-row">
+          <SideNavBar loveDog={loveDog} setLoveDog={setLoveDog} loveCat={loveCat} setLoveCat={setLoveCat} searchItem={searchItem} setSearchItem={setSearchItem}/>
+          <Routes>
+            <Route path="/" element={<AnimalInfo animals={animals} nextPage={nextPage} previousPage={previousPage} currentPage={currentPage} setFilteredAnimals={setFilteredAnimals} filteredAnimals={filteredAnimals} searchItem={searchItem} setSearchItem={setSearchItem}/>}/>
+            <Route path="/:id" element={<AnimalDetail animals={animals} setAnimals={setAnimals}/>}/>
+          </Routes>
+        </div>
+      </Router>
       </div>
     </>
   )
