@@ -1,26 +1,60 @@
+# Pet Finder Web App
 
+The Pet Finder Web App utilizes the [Petfinder API](https://www.petfinder.com/developers/) to help users find adoptable animals. Users can search for animals based on location, type, and breed, and view detailed information on each pet to help with the adoption decision-making process. This app encourages responsible pet ownership by making it easy to connect with adoptable pets nearby.
 
+## Table of Contents
 
-This web app: **Using Pet finder api to find animal to adopt**
-The application utilizes the Petfinder API to facilitate the adoption process by allowing users to search and explore a diverse range of adoptable animals. Users can input their preferences, such as location, animal type, and breed, to discover available pets. The app provides detailed information and images for each animal, fostering a seamless adoption experience while encouraging responsible pet ownership.
+- [Features](#features)
+- [Video Walkthrough](#video-walkthrough)
+- [Getting Started](#getting-started)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Environment Variables](#environment-variables)
+- [Usage](#usage)
+- [License](#license)
+
+## Features
+
+- Search for adoptable pets by location, type, and breed.
+- View detailed information, including images, about each animal.
+- Interactive user experience with a focus on pet adoption.
+
 ## Video Walkthrough
 
-Here's a walkthrough of implemented required features:
+Here's a walkthrough of implemented features:
 
 ![Video Walkthrough](/pet_finder.gif)
 
+## Getting Started
 
+Follow these steps to set up the project and start using the app.
 
-    Copyright [2023] [Zhixiang Yan]
+### Prerequisites
 
-    Licensed under the Apache License, Version 2.0 (the "License");
-    you may not use this file except in compliance with the License.
-    You may obtain a copy of the License at
+- **Node.js** (v14 or higher recommended)
+- **npm** (v6 or higher recommended)
 
-        http://www.apache.org/licenses/LICENSE-2.0
+### Installation
 
-    Unless required by applicable law or agreed to in writing, software
-    distributed under the License is distributed on an "AS IS" BASIS,
-    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-    See the License for the specific language governing permissions and
-    limitations under the License.
+1. Clone this repository:
+
+   ```bash
+   git clone https://github.com/yourusername/pet-finder-web-app.git
+   cd pet-finder-web-app
+
+2. Create a `.env` file in the root directory and add your Petfinder Credential:
+```bash
+VITE_APP_API_KEY=<Replace with your app key>
+VITE_APP_SECRET=<Replace with your app secret>
+```
+
+3. Install  dependencies:
+```bash
+npm install
+```
+
+2. Start the frontend development server:
+```bash
+npm run dev
+```
+This will start the frontend server on http://localhost:5173.
